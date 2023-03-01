@@ -1,50 +1,74 @@
 class Pet {
     constructor(name) {
-        this.name = name;
-        this.age = 0;
-        this.hunger = 0;
-        this.fitness = 10;
-        this.isAlive = true;
+      this.name = name;
+      this.age = 0;
+      this.hunger = 0;
+      this.fitness = 10;
+      this.alive = true;
     }
-    growUp() {
-        this.age += 1;
-        this.hunger += 5;
-        this.fitness -= 3;
-        this.checkAlive();
-    }
-    walk() {
-        if ((this.fitness + 4) <= 10) {
-            this.fitness += 4;
-        } else {
-            this.fitness = 10;
-        }
-        this.checkAlive();
-    }
-    feed() {
-        if ((this.hunger - 3) >= 0) {
-            this.hunger -= 3;
-        } else {
-            this.hunger = 0;
-        }
-        this.checkAlive();
-    }
-    checkUp() {
-        if (this.fitness <= 3 && this.hunger >= 5) {
-            return 'I am hungry AND I need a walk';
-        } else if (this.fitness <= 3) {
-            return 'I need a walk';
-        } else if (this.hunger >= 5) {
-            return 'I am hungry';
-        } else {
-            return 'I feel great!';
-        }
-    }
-    checkAlive() {
-        if (this.fitness <= 0 || this.hunger >= 10 || this.age >= 30) {
-            this.isAlive = false;
-        }
-    }
-}
   
-
-module.exports = Pet;
+    get isAlive() {
+      return this.alive;
+    }
+  
+    growUp() {
+      if (!this.alive) {
+        throw new Error('Your pet is no longer alive :(');
+      }
+  
+      this.age += 1;
+      this.hunger += 5;
+      this.fitness -= 3;
+  
+      if (this.hunger >= 10 || this.fitness <= 0 || this.age >= 30) {
+        this.alive = false;
+      }
+    }
+  
+    walk() {
+      if (!this.alive) {
+        throw new Error('Your pet is no longer alive :(');
+      }
+  
+      if ((this.fitness + 4) <= 10) {
+        this.fitness += 4;
+      } else {
+        this.fitness = 10;
+      }
+    }
+  
+    feed() {
+      if (!this.alive) {
+        throw new Error('Your pet is no longer alive :(');
+      }
+  
+      if ((this.hunger - 3) >= 0) {
+        this.hunger -= 3;
+      } else {
+        this.hunger = 0;
+      }
+    }
+  
+    checkUp() {
+      if (!this.alive) {
+        return 'Your pet is no longer alive :(';
+      }
+  
+      if (this.hunger >= 5 && this.fitness <= 3) {
+        return 'I am hungry AND I need a walk';
+      }
+  
+      if (this.hunger >= 5) {
+        return 'I am hungry';
+      }
+  
+      if (this.fitness <= 3) {
+        return 'I need a walk';
+      }
+  
+      return 'I feel great!';
+    }
+  }
+  
+  module.exports = Pet;
+  
