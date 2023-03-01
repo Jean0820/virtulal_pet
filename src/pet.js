@@ -5,6 +5,7 @@ class Pet {
       this.hunger = 0;
       this.fitness = 10;
       this.alive = true;
+      this.children = [];
     }
   
     get isAlive() {
@@ -68,6 +69,10 @@ class Pet {
   
       return 'I feel great!';
     }
+
+    adoptChild(child) {
+        this.children.push(child);
+      }
   }
   
   module.exports = Pet;

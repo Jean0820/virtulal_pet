@@ -93,6 +93,21 @@ describe('Pet', () => {
       expect(pet.checkUp()).toBe('I feel great!');
     });
   });
+
+  describe('Pet', () => {
+    let parent;
+    let child;
+  
+    beforeEach(() => {
+      parent = new Pet('Dave');
+      child = new Pet('Amelia');
+    });
+  
+    it('can adopt a child', () => {
+      parent.adoptChild(child);
+      expect(parent.children).toEqual([child]);
+    });
+  });
   
 });
 
