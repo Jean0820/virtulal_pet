@@ -35,7 +35,21 @@ describe('Pet', () => {
     });
   });
     
+  describe('walk', () => {
+    it('increase fitness by 4', () => {
+      pet.fitness = 4;
+      pet.walk();
+      expect(pet.fitness).toBe(8);
+    });
   
+    it('increase fitness to a maximum of 10', () => {
+      pet.fitness = 8;
+      pet.walk();
+      expect(pet.fitness).toBe(10);
+    });
+  });
+  
+
   
 });
 

@@ -12,7 +12,15 @@ class Pet {
         this.fitness -= 3;
         
     }
-   
+    walk() {
+        if ((this.fitness + 4) <= 10) {
+            this.fitness += 4;
+        } else {
+            this.fitness = 10;
+        }
+        
+    }
+    
 }
   
 
