@@ -24,8 +24,19 @@ describe('Pet', () => {
       expect(pet.age).toBe(1);
     });
 
+    it('increase the hunger by 5', () => {
+      pet.growUp();
+      expect(pet.hunger).toBe(5);
+    });
+
+    it('decrease the fitness by 3', () => {
+      pet.growUp();
+      expect(pet.fitness).toBe(7);
+    });
   });
     
+  
+  
 });
 
 
