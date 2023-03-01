@@ -10,6 +10,7 @@ class Pet {
         this.age += 1;
         this.hunger += 5;
         this.fitness -= 3;
+        this.checkAlive();
     }
     walk() {
         if ((this.fitness + 4) <= 10) {
@@ -17,12 +18,30 @@ class Pet {
         } else {
             this.fitness = 10;
         }
+        this.checkAlive();
     }
     feed() {
         if ((this.hunger - 3) >= 0) {
             this.hunger -= 3;
         } else {
             this.hunger = 0;
+        }
+        this.checkAlive();
+    }
+    checkUp() {
+        if (this.fitness <= 3 && this.hunger >= 5) {
+            return 'I am hungry AND I need a walk';
+        } else if (this.fitness <= 3) {
+            return 'I need a walk';
+        } else if (this.hunger >= 5) {
+            return 'I am hungry';
+        } else {
+            return 'I feel great!';
+        }
+    }
+    checkAlive() {
+        if (this.fitness <= 0 || this.hunger >= 10 || this.age >= 30) {
+            this.isAlive = false;
         }
     }
 }
