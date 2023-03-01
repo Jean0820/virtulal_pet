@@ -1,0 +1,21 @@
+{
+  "name": "virtual-pet",
+  "version": "1.0.0",
+  "description": "virtual-pet-project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "/Users/apple/Desktop/Projects/virtual-pet/.git/"
+  },
+  "keywords": [
+    "virtual-pet-project"
+  ],
+  "author": "Jean-Marc Mufind",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.4.3"
+  }
+}
