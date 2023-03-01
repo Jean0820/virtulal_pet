@@ -12,6 +12,10 @@ describe('Pet', () => {
       expect(pet.name).toBe('Fido');
     });
 
+    it('create a new Pet with an age of 0', () => {
+      expect(pet.age).toBe(0);
+    });
+
   });
 
 })
