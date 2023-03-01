@@ -72,7 +72,13 @@ class Pet {
 
     adoptChild(child) {
         this.children.push(child);
-      }
+    }
+    
+    haveBaby(name) {
+        const baby = new Pet(name);
+        this.children.push(baby);
+        return baby;
+    }
   }
   
   module.exports = Pet;

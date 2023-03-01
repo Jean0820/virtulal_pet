@@ -96,18 +96,18 @@ describe('Pet', () => {
 
   describe('Pet', () => {
     let parent;
-    let child;
   
     beforeEach(() => {
       parent = new Pet('Dave');
-      child = new Pet('Amelia');
     });
   
-    it('can adopt a child', () => {
-      parent.adoptChild(child);
-      expect(parent.children).toEqual([child]);
+    it('can have a baby', () => {
+      parent.haveBaby('Amelia');
+      expect(parent.children.length).toEqual(1);
+      expect(parent.children[0].name).toEqual('Amelia');
     });
   });
+  
   
 });
 
