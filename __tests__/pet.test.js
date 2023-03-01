@@ -49,7 +49,20 @@ describe('Pet', () => {
     });
   });
   
-
+  describe('feed', () => {
+    it('decrease hunger by 3', () => {
+      pet.hunger = 6;
+      pet.feed();
+      expect(pet.hunger).toBe(3);
+    });
+  
+    it('decrease hunger to a minimum of 0', () => {
+      pet.hunger = 2;
+      pet.feed();
+      expect(pet.hunger).toBe(0);
+    });
+  });
+  
   
 });
 
