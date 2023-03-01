@@ -15,7 +15,24 @@ describe('Pet', () => {
     it('create a new Pet with an age of 0', () => {
       expect(pet.age).toBe(0);
     });
-
+    
   });
 
-})
+  describe('growUp', () => {
+    it('increase the age by 1', () => {
+      pet.growUp();
+      expect(pet.age).toBe(1);
+    });
+
+  });
+    
+});
+
+
+
+
+
+
+
+
+
